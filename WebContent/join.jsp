@@ -1,5 +1,24 @@
+<%@ page import = beans.* %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<%  
+	DAO dao = new DAO();
+		
+	String id = request.getParameter("id");
+	String password = request.getParameter("password");
+	String name = request.getParameter("name");
+	String gender = request.getParameter("gender");
+	
+	String secure = (String) session.getAttribute("secure");
+	/* 
+	if (contact.matches("\\d{3}-\\d{3,4}-\\d{4}") && code.equals(secure)) {
+		session.setAttribute("pass", "on");
+		session.setAttribute("contact", contact);
+		response.sendRedirect("buy.jsp");
+	} else {
+		 */
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,34 +28,7 @@
 <body>
 	<h2>회원 가입 페이지</h2>
 	
-	<form action="createAccount.jsp" method="post">
-	<table border="1" ="center">
-	<tr>
-		<td> 아이디  :</td>
-		<td><input type="text" name="joinid"/></td>
-	</tr>
-	<tr>
-		<td>비밀번호 :	</td>
-		<td><input type="password" name="joinpw"/></td>
-	</tr>
-	<tr>
-		<td>이름 :</td>
-		<td> <input type="text" name="joinname"/></td>
-	</tr>
-	<tr>
-		<td>성별 : </td>
-		<td> 남:<input type="radio" name ="gender" value="M">여:<input type="radio" name ="gender" value="F"></input> </td> 
 	
-	</tr>
-
-	<tr>
-		<td></td>
-		<td>
-		<button type="submit" align ="right;">확인</button></td>
-	</tr>
-	<tr>
-	</table>
-	</form>
 
 	
 </body>
