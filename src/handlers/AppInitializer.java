@@ -1,5 +1,8 @@
 package handlers;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
@@ -22,7 +25,10 @@ public class AppInitializer implements ServletContextListener {
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
+		List<String> loggedIn = new ArrayList<>();
 		ServletContext ctx = sce.getServletContext();	
+		ctx.setAttribute("loggedIn", loggedIn);
+	
 		ctx.setRequestCharacterEncoding("UTF-8");	
 	}
 }
