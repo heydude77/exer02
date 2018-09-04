@@ -17,11 +17,13 @@
 	}else {
 		List<String> loggedIn = (List<String>)application.getAttribute("loggedIn");
 		if(loggedIn.contains(logid)){
+			session.setAttribute("logid", logid);
 			%>
 			<html>
 			<body>
-				이미 접속중인 아이디 입니다.
-				<a href="<%=application.getContextPath()%>/index.jsp">메인으로</a>
+				이미 접속중인 아이디 입니다. </br>
+				<a href="<%=application.getContextPath()%>/index.jsp"><button type="button">메인으로</button></a>
+				<a href="<%=application.getContextPath()%>/forceLogout.jsp"><button type="button">접속끊기</button></a>
 			</body>
 			</html>
 			<%
@@ -39,7 +41,13 @@
 			}
 			
 			ldao.addLog(logid);
-			response.sendRedirect(application.getContextPath()+"/");
+			String uri = (String)session.getAttribute("current");
+			if (uri ==null) {
+				response.sendRedirect(application.getContextPath()+"/index.jsp");
+			} else {
+				response.sendRedirect(uri);
+			}
+			
 		}
 	}
 	

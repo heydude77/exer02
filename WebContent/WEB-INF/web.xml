@@ -12,4 +12,16 @@
   <listener>
     <listener-class>handlers.AppInitializer</listener-class>
   </listener>
+   
+  <filter> 
+ 	<filter-name>authFilter</filter-name>
+ 	<filter-class>filters.AuthFilter</filter-class>
+  </filter>   
+  <filter-mapping>
+ 	<filter-name>authFilter</filter-name>
+ 	<url-pattern>/account/*</url-pattern>
+ 	<url-pattern>/message/*</url-pattern>
+ 	<url-pattern>/logout.jsp</url-pattern>
+  </filter-mapping>
+ 
 </web-app>

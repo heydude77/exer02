@@ -19,6 +19,9 @@
 	<a href="<%=application.getContextPath()%>/account/change.jsp"><button type="button">비밀번호변경</button></a>	
 	<a href="<%=application.getContextPath()%>/logout.jsp"><button type="button">로그아웃</button></a>	
 </p>
+<p style="text-align: center;">
+<a href="<%=application.getContextPath()%>/message/index.jsp"><button type="button">메세지함</button></a>	
+</p>
 <p>
 	<img src="<%=application.getContextPath()%>/image/dal.jpg" style="width: 70%; border-radius: 30px"/>
 </p>
