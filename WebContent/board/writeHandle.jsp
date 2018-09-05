@@ -49,8 +49,8 @@
 				}else {
 					
 				}
-			}
 		}
+	}
 	
 	mdao.addBoardResult(data);	
 %>

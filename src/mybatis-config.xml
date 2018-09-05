@@ -5,7 +5,7 @@
 			<transactionManager type="JDBC" />
 			<dataSource type="POOLED">
 				<property name="driver" value="oracle.jdbc.driver.OracleDriver" />
-				<property name="url" value="jdbc:oracle:thin:@dal.mockingu.com" />
+				<property name="url" value="jdbc:oracle:thin:@52.79.236.252:1521:xe" />
 				<property name="username" value="minwoo" />
 				<property name="password" value="oracle" />
 			</dataSource>

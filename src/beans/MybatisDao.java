@@ -31,6 +31,17 @@ public class MybatisDao {
 			return -1;
 		}
 	}
+	
+	public void addGood(Number n) {
+		SqlSession sql = factory.openSession(); 
+		try {
+			int r = sql.insert("board.addGood", n);
+			if (r == 1)
+				sql.commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}	
+	}
 
 	public List<Map> getAllResult() {
 		SqlSession sql = factory.openSession(); // JDBC의 Connect과정
@@ -46,6 +57,28 @@ public class MybatisDao {
 			return null;
 		}
 	}
+	
+	public String getOneResultByNo(Number n) {
+		SqlSession sql = factory.openSession(); 
+		try {
+			String p = sql.selectOne("board.getContent", n);
+			return p;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}	
+	
+	public Map getOneResultByNumber(Number n) {
+		SqlSession sql = factory.openSession(); 
+		try {
+			Map p = sql.selectOne("board.getOneResultByNumber", n);
+			return p;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}	
 
 	public Map getOneResult(String s) {
 		SqlSession sql = factory.openSession(); // JDBC 의 Connect과정

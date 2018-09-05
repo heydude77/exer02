@@ -4,17 +4,30 @@
 	<insert id="addDataUsingMap" parameterType="java.util.HashMap">
 		insert into board values(board_seq.nextval, #{writer}, #{title}, sysdate, #{content}, 0, #{attach})
 	</insert>
+	
+	<update id="addGood" parameterType="java.lang.Number">
+		 update board set good = good+1 where no=#{no}  
+	</update>
+	
 
 	<select id="getAllDataUsingMap" resultType="java.util.HashMap" >
-		select * from board order by no asc
+		select * from board order by no desc
 	</select>
 	
 	<select id="getPlayers" resultType="java.lang.String" >
-		select distinct player from baseresult order by player asc
+		select distinct player from board order by player asc
+	</select>
+	
+	<select id="getContent" resultType="java.lang.String" >
+		select content from board where no=#{no}
+	</select>
+	
+	<select id="getOneResultByNumber" resultType="java.util.HashMap" parameterType="java.lang.Number" >
+		select * from board where no=#{no}
 	</select>
 	
 	<select id="getOneDataUsingMap" resultType="java.util.HashMap" parameterType="java.lang.String" >
-		select * from baseresult where serial=#{serial}
+		select * from board where serial=#{serial}
 	</select>
 	
 </mapper>
