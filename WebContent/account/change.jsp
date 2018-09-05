@@ -13,16 +13,18 @@
 <form action="<%=application.getContextPath() %>/account/changed.jsp" method="post" autocomplete="off">
 	<p>
 		<b>기존 비밀번호(*)</b> <br/>
-		<input type="password" style="font-size: 16px; padding: 5px" name="oldPw" placeholder="old password"/>
+		<input type="password" style="font-size: 16px; padding: 5px" name="oldPw" placeholder="old password" required="required"/>
 	</p>
 	<p>
 		<b>새로운 비밀번호(*)</b> <br/>
-		<input type="password" style="font-size: 16px; padding: 5px" name="newPw" placeholder="new password"/>
+		<input type="password" style="font-size: 16px; padding: 5px" name="newPw" placeholder="new password" required="required"/>
 	</p>
 	<p>
 		<b>비밀번호 재확인(*)</b><br/>
-		<input type="password" style="font-size: 16px; padding: 5px" name="newPwConfirm" placeholder="password confirm"/>
+		<input type="password" style="font-size: 16px; padding: 5px" name="newPwConfirm" placeholder="password confirm" required="required"/>
 	</p>
+	
+	
 	<p>
 		<button type="submit" style="font-size: 16px; padding: 5px">변 경 적 용</button>
 	</p>
