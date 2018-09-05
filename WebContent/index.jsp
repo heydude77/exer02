@@ -21,6 +21,7 @@
 </p>
 <p style="text-align: center;">
 <a href="<%=application.getContextPath()%>/message/index.jsp"><button type="button">메세지함</button></a>	
+<a href="<%=application.getContextPath()%>/board/index.jsp"><button type="button">게시판</button></a>	
 </p>
 <p>
 	<img src="<%=application.getContextPath()%>/image/dal.jpg" style="width: 70%; border-radius: 30px"/>
