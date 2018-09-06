@@ -1,6 +1,7 @@
 <%@page import="beans.MybatisDao"%>
 <%@page import="java.util.*"%>
 <%@page import="java.text.SimpleDateFormat"%>
+<%@ page errorPage="/error/default.jsp" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <%
@@ -8,7 +9,11 @@
 	String no = (String)request.getParameter("no");
 	Number n= Integer.parseInt(no);
 	Map map = mdao.getOneResultByNumber(n);
-%>	
+	if (map == null) {
+		throw new RuntimeException("페이지가 존재하지 않습니다.");
+	} else {%>
+	
+		
 
 <%@ include file="/layout/top.jspf"%>
 	<h1> 게시글 보기 </h1> 
@@ -68,4 +73,5 @@
 			
 	
 <%@ include file="/layout/bottom.jspf"%>
-<%@ include file="/layout/bottom.jspf"%>
+
+<%} %>

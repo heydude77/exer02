@@ -22,6 +22,11 @@
  	<url-pattern>/account/*</url-pattern>
  	<url-pattern>/message/*</url-pattern>
  	<url-pattern>/logout.jsp</url-pattern>
+ 	<url-pattern>/board/write.jsp</url-pattern>
+ 	<url-pattern>/board/addGood.jsp</url-pattern>
+ 	<url-pattern>/board/writeHandle.jsp</url-pattern>
+ 	<url-pattern>/board/getContent.jsp</url-pattern>
+ 	
   </filter-mapping>
  
 </web-app>

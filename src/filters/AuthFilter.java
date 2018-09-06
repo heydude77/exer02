@@ -21,8 +21,10 @@ public class AuthFilter extends HttpFilter{
 		protected void doFilter(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
 				throws IOException, ServletException {
 			
-			String uri = request.getRequestURI();
-			request.getSession().setAttribute("current",uri);
+			String query = request.getQueryString();	
+			String uri = request.getRequestURI()+(query!=null ? "?"+query : "");
+			
+			request.getSession().setAttribute("current",uri);		
 			
 			Boolean auth = (Boolean)request.getSession().getAttribute("auth");
 			

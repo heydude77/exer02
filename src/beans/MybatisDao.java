@@ -107,4 +107,18 @@ public class MybatisDao {
 			return -1;
 		}
 	}
+	
+	public int addGoodLog (Map map) {
+		SqlSession sql = factory.openSession(); 
+		try {
+			int r = sql.insert("goodlog.setLog", map);
+			if (r == 1)
+				sql.commit();
+			return r;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return -1;
+		}
+	}	
+	
 }

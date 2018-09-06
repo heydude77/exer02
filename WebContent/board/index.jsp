@@ -48,6 +48,7 @@
 		String attach =(String)list.get(i).get("ATTACH");
 		attach = attach.substring(attach.lastIndexOf("/")+1, attach.length());
 		String containFile = attach.equals("null") ? "X" : "O";
+	
 		
 	%>
 		<tr>

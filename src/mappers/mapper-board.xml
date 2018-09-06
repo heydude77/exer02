@@ -30,4 +30,6 @@
 		select * from board where serial=#{serial}
 	</select>
 	
+	
+	
 </mapper>

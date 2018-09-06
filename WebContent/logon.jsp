@@ -42,7 +42,10 @@
 			
 			ldao.addLog(logid);
 			String uri = (String)session.getAttribute("current");
-			if (uri ==null) {
+			String linkTo = (String)request.getSession().getAttribute("contentLink");
+			if (linkTo!=null){
+				response.sendRedirect(application.getContextPath()+linkTo);
+			}else if (uri ==null) {
 				response.sendRedirect(application.getContextPath()+"/index.jsp");
 			} else {
 				response.sendRedirect(uri);
