@@ -45,7 +45,7 @@
 					
 				}else if (part.isParam()){
 					ParamPart pp=(ParamPart)part;
-					data.put(pp.getName(), pp.getValue());
+					data.put(pp.getName(), pp.getStringValue());
 				}else {
 					
 				}

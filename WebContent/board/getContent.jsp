@@ -34,8 +34,8 @@
 				SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 				String date =format.format(leftDate);
 				String attach =(String)map.get("ATTACH");
-				attach = attach.substring(attach.lastIndexOf("/")+1, attach.length());
-				String containFile = attach.equals("null") ? "X" : "O";
+				String subAttach = attach.substring(attach.lastIndexOf("/")+1, attach.length());
+				String containFile = subAttach.equals("null") ? "X" : "O";
 				String content = (String)map.get("CONTENT");
 			%>
 				<tr>
@@ -55,8 +55,8 @@
 		
 		<%if (containFile.equals("O")){ %>
 		<table align="center" border="1">
-			<td>첨부파일 : <%=attach%> </td>
-			<td><a href="<%=application.getContextPath()%>/board/download.jsp">Click to Download</a></td>
+			<td>첨부파일 : <%=subAttach%> </td>
+			<td><a href ="<%=application.getContextPath()%><%=attach%>" download>Click to Download</a></td>
 		</table>
 		<%} %>
 		<br/>

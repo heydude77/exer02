@@ -19,9 +19,11 @@
 			placeholder="글 내용 입력"></textarea>	
 	</p>
 	file : <input type="file" name = "attach"/> </br> </br>
-	<button type="submit">글 게시</button>  
-	<a href="<%=application.getContextPath()%>/index.jsp"><button type="button">메인으로</button></a>	
+	<button class="w3-button w3-black w3-hover-teal w3-round-large">글 게시</button>  
 	</form>
+	<a href="<%=application.getContextPath()%>/index.jsp">
+	<button class="w3-button w3-black w3-hover-teal w3-round-large">메인으로</button></a>	
+	
 <%@ include file="/layout/bottom.jspf"%>
 
 <%

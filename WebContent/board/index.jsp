@@ -9,20 +9,28 @@
 	List<Map> list = mdao.getAllResult();
 %>
 <%@ include file="/layout/top.jspf"%>
-	<h1> 게시판 </h1>  
-	<a href="<%=application.getContextPath()%>/board/write.jsp"><button type="button">글작성</button></a>
-	<a href="<%=application.getContextPath()%>/index.jsp"><button type="button">메인으로</button></a>	
-	<br/>
-	<br/>
-	 <table align="center" border="1">
+
+<div align="center" class="w3-panel w3-black" >
+  <h1 class="w3-opacity"> 게시판 </h1>
+</div>
+
+
+<p>
+	
+	<a href="<%=application.getContextPath()%>/board/write.jsp">
+	<button class="w3-button w3-Indigo w3-hover-teal w3-round-large">글작성</button></a>
+	<a href="<%=application.getContextPath()%>/index.jsp">
+	<button class="w3-button w3-Indigo w3-hover-teal w3-round-large">메인으로</button></a>	
+</p>	
+	 <table align="center" border="1" padding="1px" >
 	   	<thead>
 	    	<tr>
-	    		<td>글번호</td>
-	    		<td>글쓴이</td>
-	    		<td>글제목</td>
-	    		<td>첨부파일</td>
-	    		<td>추천수</td>  
-	    		<td>작성시간</td>
+	    		<td><b>글번호</b></td>
+	    		<td style = "width:200px;" ><b>글제목</b></td>
+	    		<td><b>글쓴이</b></td>
+	    		<td><b>첨부파일</b></td>
+	    		<td><b>추천수</b></td>  
+	    		<td><b>작성시간</b></td>
 	    		  	
 	    	</tr>
    		</thead>
@@ -44,11 +52,11 @@
 	%>
 		<tr>
 			<td><%=list.get(i).get("NO")%></td>
-			<td><%=list.get(i).get("WRITER") %></td>
-			<td><a href="<%=application.getContextPath()%>/board/getContent.jsp?no=<%=list.get(i).get("NO")%>"><%=title%></a></td>
-			<td><%=containFile%></td>
-			<td><%=list.get(i).get("GOOD")%></td>	
-			<td><%=date%></td>
+			<td style =padding-left:7px;text-align:left; ><a href="<%=application.getContextPath()%>/board/getContent.jsp?no=<%=list.get(i).get("NO")%>"><%=title%></a></td>
+			<td><small><%=list.get(i).get("WRITER") %></small></td>
+			<td><small><%=containFile%></small></td>
+			<td><small><%=list.get(i).get("GOOD")%></small></td>	
+			<td><small><%=date%></small></td>
 		</tr>	
    
     	
@@ -56,6 +64,7 @@
     <%} %>
     	</tbody>
      </table>
+     
 <%@ include file="/layout/bottom.jspf"%>
 <% 
 	/*

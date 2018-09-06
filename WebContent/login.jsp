@@ -5,11 +5,12 @@
 %>
 <%@ include file="/layout/top.jspf"%>
 <h3 ><span style="font-size: xx-large;">회원인증</span> | <a href="<%=application.getContextPath()%>/join.jsp">회원가입</a></h3>  
-<p style="font-size: small;">
-	사용자 계정을 통해 인증 후 <b>로그인</b>을 진행합니다.<br/>
+
+<div class="w3-panel w3-pale-green w3-bottombar w3-border-green w3-border">
+  <p>사용자 계정을 통해 인증 후 <b>로그인</b>을 진행합니다.<br/>
 	《인증유지하기》시 최대 30일까지 인증절차가 생략됩니다.<br/>
-	개인PC나 휴대기기가 아니면 사용을 권장하지 않습니다.
-</p>
+	개인PC나 휴대기기가 아니면 사용을 권장하지 않습니다.</p>
+</div>	
 <form action="<%=application.getContextPath() %>/logon.jsp" method="post" autocomplete="off">
 	<p>
 		<b>계정 아이디(*)</b> <br/>

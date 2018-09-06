@@ -27,7 +27,10 @@
 		<textarea name="content" style="height: 170px; width: 220px; padding: 5px; resize: none; font-family: inherit;"
 			placeholder="write a message"></textarea>	
 	</p>
-	<button type="submit">메세지 전송</button>  
-	<a href="<%=application.getContextPath()%>/index.jsp"><button type="button">메인으로</button></a>	
+	<button class="w3-button w3-Indigo w3-hover-teal w3-round-large">메세지 전송</button>  
+
 	</form>
+	<a href="<%=application.getContextPath()%>/index.jsp">
+	<button class="w3-button w3-Indigo w3-hover-teal w3-round-large">메인으로</button></a>	
+	
 <%@ include file="/layout/bottom.jspf"%>

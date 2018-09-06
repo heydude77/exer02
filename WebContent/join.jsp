@@ -5,15 +5,17 @@
 %>
 <%@ include file="/layout/top.jspf"%>
 <h3 ><span style="font-size: xx-large;">회원가입</span> | <a href="<%=application.getContextPath()%>/login.jsp">회원인증</a></h3>  
-<p style="font-size: small;">
-	이 어플리케이션의 대부분의 서비스는 <br/>
+<div class="w3-panel w3-pale-green w3-bottombar w3-border-green w3-border">
+  <p>이 어플리케이션의 대부분의 서비스는 <br/>
 	회원가입을 통해 등록된 사용자에게 제공되고 있습니다.<br/>
 	아직 사용자 계정이 없으십니까?<br/>
-</p>
-<p style="font-size: small;">
-	아이디는 영문,숫자 4~12자 내외이며, 이름은 한글만 설정가능하고,<br/>
+  </p>
+</div>	
+<div class="w3-panel w3-pale-blue w3-bottombar w3-border-green w3-border">
+  <p>아이디는 영문,숫자 4~12자 내외이며, 이름은 한글만 설정가능하고,<br/>
 	비밀번호는 4자 이상으로 설정바랍니다. <br/>
-</p>
+  </p>
+</div>	
 <form action="<%=application.getContextPath() %>/joined.jsp" method="post" autocomplete="off">
 	<p>
 		<b>아이디(*)</b> <br/>
