@@ -12,6 +12,9 @@
   <listener>
     <listener-class>handlers.AppInitializer</listener-class>
   </listener>
+  <listener>
+    <listener-class>handlers.RequestHandler</listener-class>
+  </listener>
    
   <filter> 
  	<filter-name>authFilter</filter-name>

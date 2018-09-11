@@ -5,6 +5,9 @@
 <%@ page import="java.util.*" %>
 <%
 	String logid =request.getParameter("logid");
+	if(logid==null) {
+		logid = (String)session.getAttribute("logid");
+	}
 	String logpass = request.getParameter("logpass");
 	
  
@@ -16,23 +19,16 @@
 			response.sendRedirect(application.getContextPath()+"/login.jsp?mode=fail");	
 	}else {
 		List<String> loggedIn = (List<String>)application.getAttribute("loggedIn");
-		if(loggedIn.contains(logid)){
-			session.setAttribute("logid", logid);
-			%>
-			<html>
-			<body>
-				이미 접속중인 아이디 입니다. </br>
-				<a href="<%=application.getContextPath()%>/index.jsp"><button type="button">메인으로</button></a>
-				<a href="<%=application.getContextPath()%>/forceLogout.jsp"><button type="button">접속끊기</button></a>
-			</body>
-			</html>
-			<%
-		}else {
-			loggedIn.add(logid);
-			application.setAttribute("loggedIn", loggedIn);
+		
+		loggedIn.add(logid);
+		application.setAttribute("loggedIn", loggedIn);
 			
 			session.setAttribute("auth", true);
 			session.setAttribute("logid", logid);
+			
+		/*	Cookie t = new Cookie("keepLogin", logid);	
+			t.setMaxAge(60*60);	
+			response.addCookie(t); */
 			
 			LoginLogDao ldao = new LoginLogDao();
 			Map log = ldao.getLatesetLogById(logid);
@@ -51,7 +47,7 @@
 				response.sendRedirect(uri);
 			}
 			
-		}
+		
 	}
 	
 	
